@@ -1,0 +1,7 @@
+# Environment-independent configuration
+
+# App
+APP_PORT: 3000
+# log level: error, warn, info, verbose, debug, silly
+APP_LOG_LEVEL: debug
+APP_DOMAIN: https://api.finolabs.club

@@ -1,0 +1,20 @@
+clone:
+  git:
+    image: plugins/git
+    tags: true
+pipeline:
+  docker_latest:
+      image: docker.finogeeks.club/drone/docker
+      repo: docker.finogeeks.club/finochat/fin-docking
+      dockerfile: Dockerfile
+      when:
+          branch: master
+          event: [push, pull_request]
+  docker_tag:
+      image: docker.finogeeks.club/drone/docker
+      repo: docker.finogeeks.club/finochat/fin-docking
+      dockerfile: Dockerfile
+      default_tags: true
+      when:
+          event: [tag]
+
