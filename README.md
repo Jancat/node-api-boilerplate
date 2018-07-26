@@ -6,6 +6,15 @@ Node API boilerplate
 技术栈：Node v10.7+、Koa2、TSLint、Prettier、Yarn、Husky/lint-staged(Git hooks)
 
 
+#### Features
+- 使用 `ts-node` 在 Node 中执行 TypeScript 代码
+- 使用 `node-config` 配置不同环境中的变量
+- 使用 `TSLint` + `Prettier` 统一代码风格
+- 使用 `wotan` + `chalk` 打印带颜色标识的日志，包括 HTTP Receive、Send 日志
+- 使用 `node-fetch` 发送 HTTP 请求，在 Node 中实现的轻量级**window.fetch**。已经过简单封装 
+- 已配置常用的 `Koa2` **middlewares**
+- 统一的错误处理，规范 API 接口报错格式
+
 ### 目录结构
 在项目根目录下执行
 ```
@@ -75,6 +84,28 @@ code...
 ```
 
 参考 https://palantir.github.io/tslint/usage/rule-flags/
+
+
+### Debug
+#### VSCode Debug Config
+**launch.json**
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "启动程序",
+      "args": ["${workspaceFolder}/src/app.ts"],
+      "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}
+```
 
 ### Git Commit
 小步提交，每次提交都只有一个主题！
