@@ -27,7 +27,7 @@
     "@types/winston": "^2.3.9",
     "chalk": "^2.4.1",
     "config": "^1.30.0",
-    "js-yaml": "^3.12.0",
+    "js-yaml": "^3.13.1",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-compose": "^4.1.0",
